@@ -11,9 +11,7 @@
 <meta property="og:url" content="https://vratanagaraz.cz/">
 <link rel="canonical" href="https://vratanagaraz.cz/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff6a1a'/%3E%3Cpath d='M14 52V24l18-10 18 10v28' fill='none' stroke='%23fff' stroke-width='5'/%3E%3Cpath d='M22 52V32h20v20M32 32v20' stroke='%23fff' stroke-width='4' fill='none'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts.css">
 <style>
 :root{
   --bg:#f3f2ef; --surface:#ffffff; --ink:#15171a; --muted:#5f646b; --line:#dcdad4;
@@ -238,7 +236,14 @@ form .btn{grid-column:1/-1;justify-content:center;padding:16px}
 @media(max-width:520px){form{grid-template-columns:1fr}}
 
 footer{background:#0f1113;color:#7d838a;padding:30px 0;font-size:.9rem}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-end}
+.foot-op,.foot-links{display:grid;gap:4px}
+.foot-op b{color:#c3c7cc;font-weight:700;margin-bottom:2px}
+.foot-links{text-align:right;justify-items:end}
+footer a{color:#c3c7cc}
+footer a:hover{color:#fff}
+.form-note a{color:#c3c7cc}
+@media(max-width:600px){.foot-links{text-align:left;justify-items:start}}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
@@ -533,7 +538,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="field"><label for="f-place">Místo garáže</label><input id="f-place" name="place" placeholder="např. Opava, Frýdek-Místek"></div>
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field full"><label for="f-msg">Zpráva</label><textarea id="f-msg" name="msg"></textarea></div>
-        <p class="form-note">Zvolená konfigurace z konfigurátoru se odešle spolu s poptávkou. Údaje použijeme jen pro odpověď na poptávku.</p>
+        <p class="form-note">Zvolená konfigurace z konfigurátoru se odešle spolu s poptávkou. Vyplněné údaje zpracujeme pouze pro vyřízení vaší poptávky – podrobnosti v <a href="ochrana-osobnich-udaju.html">zásadách ochrany osobních údajů</a>.</p>
         <div class="form-status full" id="formStatus" role="status" aria-live="polite" hidden></div>
         <button class="btn" type="submit">Odeslat poptávku</button>
       </form>
@@ -542,9 +547,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </section>
 
 <footer>
-  <div class="wrap">
-    <span>© <span id="yr"></span> vratanagaraz.cz · Garážová vrata na míru</span>
-    <a href="#top" style="text-decoration:none">Nahoru ↑</a>
+  <div class="wrap foot">
+    <div class="foot-op">
+      <b>Provozovatel</b>
+      <span>Petr Holaň, č.p. 356, 742 82 Jistebník</span>
+      <span>IČO: 64975088 · fyzická osoba podnikající dle živnostenského zákona</span>
+      <span>E-mail: <a href="mailto:poptavky@vratanagaraz.cz">poptavky@vratanagaraz.cz</a></span>
+    </div>
+    <div class="foot-links">
+      <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="ochrana-osobnich-udaju.html#cookies">Cookies</a>
+      <span>© <span id="yr"></span> vratanagaraz.cz</span>
+    </div>
   </div>
 </footer>
 
