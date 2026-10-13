@@ -247,6 +247,14 @@
       "@type": "Answer",
       "text": "Sestavte si vrata v konfigurátoru na této stránce a odešlete nezávaznou poptávku, nebo napište na poptavky@vratanagaraz.cz. Ozveme se vám, domluvíme zaměření a potvrdíme přesnou cenu. Poptávka je zdarma a k ničemu vás nezavazuje."
      }
+    },
+    {
+     "@type": "Question",
+     "name": "Kdo web provozuje?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Provozovatelem webu vratanagaraz.cz je Petr Holaň, č.p. 356, 742 82 Jistebník, IČO 64975088, fyzická osoba podnikající dle živnostenského zákona. Kontakt: poptavky@vratanagaraz.cz."
+     }
     }
    ]
   }
@@ -757,6 +765,7 @@ footer a:hover{color:#fff}
       <details class="rv"><summary>Vyrábíte i jednokřídlá vrata?</summary><p>Ano. Kromě dvoukřídlých vrat vyrábíme na míru i jednokřídlá. Konfigurátor zobrazuje dvoukřídlou variantu – pokud chcete jednokřídlá vrata, stačí to napsat do zprávy v poptávce.</p></details>
       <details class="rv"><summary>Kde vrata montujete?</summary><p>Působíme v celém Moravskoslezském kraji – například v Ostravě, Opavě, Frýdku-Místku, Havířově, Karviné, Třinci, Novém Jičíně, Kopřivnici, Bohumíně, Orlové, Hlučíně, Krnově a v jejich okolí.</p></details>
       <details class="rv"><summary>Jak získám cenovou nabídku?</summary><p>Sestavte si vrata v konfigurátoru na této stránce a odešlete nezávaznou poptávku, nebo napište na poptavky@vratanagaraz.cz. Ozveme se vám, domluvíme zaměření a potvrdíme přesnou cenu. Poptávka je zdarma a k ničemu vás nezavazuje.</p></details>
+      <details class="rv" id="faq-provozovatel"><summary>Kdo web provozuje?</summary><p>Provozovatelem webu vratanagaraz.cz je Petr Holaň, č.p. 356, 742 82 Jistebník, IČO 64975088, fyzická osoba podnikající dle živnostenského zákona. Kontakt: poptavky@vratanagaraz.cz.</p></details>
     </div>
   </div>
 </section>
@@ -797,10 +806,7 @@ footer a:hover{color:#fff}
 <footer>
   <div class="wrap foot">
     <div class="foot-op">
-      <b>Provozovatel</b>
-      <span>Petr Holaň, č.p. 356, 742 82 Jistebník</span>
-      <span>IČO: 64975088 · fyzická osoba podnikající dle živnostenského zákona</span>
-      <span>E-mail: <a href="mailto:poptavky@vratanagaraz.cz">poptavky@vratanagaraz.cz</a></span>
+      <span>Provozovatel: Petr Holaň · IČO 64975088 · <a href="#faq-provozovatel">více</a></span>
     </div>
     <div class="foot-links">
       <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
@@ -1023,6 +1029,10 @@ $("#form").addEventListener("submit", async e=>{
     st.hidden = false; btn.disabled = false; btn.textContent = label;
   }
 });
+
+// otevření FAQ položky z odkazu
+function openHashDetails(){ const d=document.getElementById(location.hash.slice(1)); if(d&&d.tagName==="DETAILS"){ d.open=true; d.classList.add("in"); } }
+addEventListener("hashchange",openHashDetails); openHashDetails();
 
 // header + reveal
 const hdr = $("header");
