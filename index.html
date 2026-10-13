@@ -419,17 +419,14 @@ input[type=range]{flex:1;accent-color:var(--accent);height:28px}
 .ref li::before{content:"";flex-shrink:0;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12l4 4 8-8' stroke='%23fff' stroke-width='3' fill='none'/%3E%3C/svg%3E") center/14px no-repeat}
 @media(max-width:860px){.ref{grid-template-columns:1fr}}
 
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.g-item{position:relative;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:#ddd;border:0;padding:0;text-align:left;font:inherit;color:#fff}
-.g-item img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.g-item{position:relative;display:block;width:100%;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:#ddd;border:0;padding:0;text-align:left;font:inherit;color:#fff}
+.g-item img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .6s}
 .g-item:hover img{transform:scale(1.04)}
-.g-item:first-child{grid-column:span 2;grid-row:span 2}
-.g-item:only-child{grid-column:1/-1}
-.g-item:only-child img{aspect-ratio:16/8}
 .g-cap{position:absolute;inset:auto 0 0 0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.72))}
 .g-cap b{display:block;font-size:1.05rem}
 .g-cap span{font-size:.85rem;opacity:.8}
-@media(max-width:760px){.gallery{grid-template-columns:1fr 1fr}.g-item:first-child{grid-column:1/-1;grid-row:auto}.g-item:only-child img{aspect-ratio:4/3}}
+@media(max-width:860px){.gallery{grid-template-columns:1fr 1fr;gap:10px}.g-cap{padding:28px 12px 10px}.g-cap b{font-size:.92rem}.g-cap span{font-size:.75rem}}
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(10,11,13,.94);display:flex;align-items:center;justify-content:center;padding:20px}
 .lightbox[hidden]{display:none}
 .lightbox figure{max-width:min(1100px,100%);color:#fff;text-align:center}
@@ -953,14 +950,17 @@ $("#opt-hasp2").addEventListener("change",e=>{state.haspBottom=e.target.checked;
 
 // ===== Realizace – fotky přidáte sem (soubor nahrajte do složky webu) =====
 const REALIZACE = [
-  {src:"vrata-realizace.jpg", title:"Dvoukřídlá vrata, šedá RAL 7035", place:"Řadová garáž"}
+  {src:"realizace-sede-petlice.jpg", title:"Šedá vrata s petlicí", place:"Dvoukřídlá · řadová garáž"},
+  {src:"vrata-realizace.jpg", title:"Šedá vrata RAL 7035", place:"Dvoukřídlá · řadová garáž"},
+  {src:"detail-petlice-klika.jpg", title:"Detail petlice", place:"Na visací zámek"},
+  {src:"detail-zamek.jpg", title:"Detail zámku", place:"Zámek s klikou v základu"}
 ];
 const gal = $("#gallery"), lb = $("#lightbox");
 let lbIdx = 0;
 REALIZACE.forEach((r,i)=>{
   const b = document.createElement("button");
   b.className="g-item rv"; b.type="button";
-  b.innerHTML = `<img src="${r.src}" alt="${r.title}" loading="lazy"><div class="g-cap"><b>${r.title}</b><span>${r.place||""}</span></div>`;
+  b.innerHTML = `<img src="${r.src}" alt="${r.title} – garážová vrata na míru" loading="lazy"><div class="g-cap"><b>${r.title}</b><span>${r.place||""}</span></div>`;
   b.onclick = ()=>openLb(i);
   gal.appendChild(b);
 });
