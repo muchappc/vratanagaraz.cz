@@ -438,6 +438,15 @@ input[type=range]{flex:1;accent-color:var(--accent);height:28px}
 .lb-prev{left:16px;top:50%;transform:translateY(-50%)}
 .lb-next{right:16px;top:50%;transform:translateY(-50%)}
 
+.rady{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rada{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-decoration:none;transition:border-color .2s,transform .2s}
+.rada:hover{border-color:var(--accent);transform:translateY(-3px)}
+.rada b{font-size:1.08rem;line-height:1.25}
+.rada span{color:var(--muted);font-size:.92rem;flex:1}
+.rada em{font-style:normal;color:var(--accent);font-weight:700;font-size:.9rem}
+@media(max-width:960px){.rady{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.rady{grid-template-columns:1fr}}
+
 /* faq */
 .faq{display:grid;gap:10px;max-width:820px}
 details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 22px;transition:border-color .2s}
@@ -512,6 +521,7 @@ footer a:hover{color:#fff}
       <a href="#proc-my">Proč my</a>
       <a href="#konfigurator">Konfigurátor</a>
       <a href="#realizace">Realizace</a>
+      <a href="rady/">Rady</a>
       <a href="#faq">Otázky</a>
       <a href="#poptavka" class="btn">Poptat vrata</a>
     </nav>
@@ -738,6 +748,17 @@ footer a:hover{color:#fff}
   <button class="lb-btn lb-next" aria-label="Další">›</button>
 </div>
 
+<section id="rady" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="mono">Rady a návody</span>
+      <h2>Než si vrata objednáte</h2>
+      <p>Odpovědi na otázky, které nám lidé kladou nejčastěji. <a href="rady/" style="color:var(--accent);font-weight:600">Všechny rady →</a></p>
+    </div>
+    <div class="rady"><a class="rada rv" href="rady/kolik-stoji-garazova-vrata.html"><b>Kolik stojí garážová vrata na míru?</b><span>Co je v ceně, co ji navyšuje a příklady orientačních cen.</span><em>Číst →</em></a><a class="rada rv" href="rady/pozink-nebo-bez-pozinku.html"><b>Pozink, nebo bez pozinku?</b><span>Jak funguje žárový zinek a pro koho se která varianta hodí.</span><em>Číst →</em></a><a class="rada rv" href="rady/jak-zamerit-otvor-garaze.html"><b>Jak zaměřit otvor garáže?</b><span>Šířka, výška, úhlopříčky – návod krok za krokem.</span><em>Číst →</em></a><a class="rada rv" href="rady/vymena-garazovych-vrat.html"><b>Jak probíhá výměna vrat?</b><span>Od poptávky po montáž, obvykle za 2–3 týdny.</span><em>Číst →</em></a></div>
+  </div>
+</section>
+
 <section id="faq" style="background:var(--surface);border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head rv">
@@ -798,6 +819,7 @@ footer a:hover{color:#fff}
   <div class="wrap foot">
     <div class="foot-op"><span>© <span id="yr"></span> vratanagaraz.cz · Garážová vrata na míru</span></div>
     <div class="foot-links">
+      <a href="rady/">Rady a návody</a>
       <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
       <a href="ochrana-osobnich-udaju.html#cookies">Cookies</a>
       <a href="ochrana-osobnich-udaju.html#provozovatel">Provozovatel webu</a>
