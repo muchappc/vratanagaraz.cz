@@ -13,9 +13,9 @@
 <meta property="og:site_name" content="vratanagaraz.cz">
 <meta property="og:title" content="Garážová vrata na míru – od 27 000 Kč">
 <meta property="og:description" content="Ocelová garážová vrata vyrobená na míru pro Moravskoslezský kraj. 7 barev, pozink, petlice. Sestavte si vrata online.">
-<meta property="og:image" content="https://vratanagaraz.cz/vrata-realizace.jpg">
-<meta property="og:image:width" content="1177">
-<meta property="og:image:height" content="883">
+<meta property="og:image" content="https://vratanagaraz.cz/realizace-svetle-seda.jpg">
+<meta property="og:image:width" content="1050">
+<meta property="og:image:height" content="1400">
 <meta property="og:url" content="https://vratanagaraz.cz/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://vratanagaraz.cz/">
@@ -36,7 +36,7 @@
    "name": "vratanagaraz.cz – garážová vrata na míru",
    "url": "https://vratanagaraz.cz/",
    "email": "poptavky@vratanagaraz.cz",
-   "image": "https://vratanagaraz.cz/vrata-realizace.jpg",
+   "image": "https://vratanagaraz.cz/realizace-svetle-seda.jpg",
    "priceRange": "od 27 000 Kč",
    "description": "Ocelová dvoukřídlá i jednokřídlá garážová vrata vyrobená na míru v kovovýrobě. 7 barev, volitelně žárový pozink a petlice. Zaměření, výroba a montáž v celém Moravskoslezském kraji.",
    "areaServed": [
@@ -420,7 +420,7 @@ input[type=range]{flex:1;accent-color:var(--accent);height:28px}
 .ref li::before{content:"";flex-shrink:0;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12l4 4 8-8' stroke='%23fff' stroke-width='3' fill='none'/%3E%3C/svg%3E") center/14px no-repeat}
 @media(max-width:860px){.ref{grid-template-columns:1fr}}
 
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
 .g-item{position:relative;display:block;width:100%;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:#ddd;border:0;padding:0;text-align:left;font:inherit;color:#fff}
 .g-item img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .6s}
 .g-item:hover img{transform:scale(1.04)}
@@ -968,8 +968,9 @@ $("#opt-hasp2").addEventListener("change",e=>{state.haspBottom=e.target.checked;
 
 // ===== Realizace – fotky přidáte sem (soubor nahrajte do složky webu) =====
 const REALIZACE = [
+  {src:"realizace-svetle-seda.jpg", title:"Světle šedá vrata s petlicí", place:"Dvoukřídlá · řadová garáž"},
   {src:"realizace-sede-petlice.jpg", title:"Šedá vrata s petlicí", place:"Dvoukřídlá · řadová garáž"},
-  {src:"vrata-realizace.jpg", title:"Šedá vrata RAL 7035", place:"Dvoukřídlá · řadová garáž"},
+  {src:"detail-petlice-klika-2.jpg", title:"Detail petlice a kliky", place:"Petlice na visací zámek"},
   {src:"detail-petlice-klika.jpg", title:"Detail petlice", place:"Na visací zámek"},
   {src:"detail-zamek.jpg", title:"Detail zámku", place:"Zámek s klikou v základu"}
 ];
